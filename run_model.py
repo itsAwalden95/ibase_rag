@@ -11,14 +11,14 @@ import time
 chroma_client = chromadb.PersistentClient(path="./db")
 
 # Initialize LLaMA model with llama-cpp-python (local model)
-llama_model_path = "model:path"  # Path to your LLaMA model
+llama_model_path = "/data/LLMs/gguf/Llama-3.2-3B-Instruct-Q4_K_M.gguf"  # Path to your LLaMA model
 llama = Llama(model_path=llama_model_path, n_ctx=0)
 
 #model = SentenceTransformer('all-mpnet-base-v2')
 sentence_transformer_ef = embedding_functions.SentenceTransformerEmbeddingFunction(model_name="all-mpnet-base-v2")
 
 # Function to retrieve relevant documents from ChromaDB
-def retrieve_documents(query, collection_name, top_k=3):
+def retrieve_documents(query, collection_name, top_k=2):
  
     collection = chroma_client.get_collection(name=collection_name, embedding_function=sentence_transformer_ef)
     
@@ -170,7 +170,7 @@ def main():
         )
 
     # Launch the Gradio app
-    demo.launch(server_name="0.0.0.0", enable_queue=True)
+    demo.launch(server_name="0.0.0.0", server_port = 8082, enable_queue=True)
 
 if __name__ == "__main__":
     main()
