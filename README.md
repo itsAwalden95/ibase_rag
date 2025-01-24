@@ -12,9 +12,9 @@ Before using this project, ensure you have the following dependencies installed:
 For ppc64le you can use these commands to get chroma, llama.cpp.python and other libraries:
 micromamba create -n env python=3.10
 
-micromamba install -c rocketce -c defaults pytorch-cpu scikit-learn pyyaml httptools "onnxruntime>=1.14=*cpu*" "pandas<1.6.0" tokenizers
+micromamba install -c rocketce -c defaults pytorch-cpu scikit-learn pyyaml httptools onnxruntime "pandas<1.6.0" tokenizers
 
-pip install -U --extra-index-url https://repo.fury.io/mgiessing --prefer-binary chromadb transformers psutil langchain sentence_transformers gradio llama-cpp-python
+pip install -U --extra-index-url https://repo.fury.io/mgiessing --prefer-binary chromadb transformers psutil langchain sentence_transformers gradio==3.50.2 llama-cpp-python
 
 
 
