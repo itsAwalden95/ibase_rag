@@ -1,4 +1,4 @@
-# RAG Pipeline for RedBooks
+# RAG Pipeline for Install base
 
 This repository provides a Retrieval-Augmented Generation (RAG) pipeline for processing and utilizing install bases for servers.
 
