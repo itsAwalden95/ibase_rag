@@ -53,7 +53,7 @@ python run_model.py
 - `run_model.py`: Script for running the RAG pipeline using the configured LLM.
 
 ## Notes
-
+- Login to server with this command: ssh -L 8082:localhost:8082 user@host_IP to allow for interaction with Chatbot/Gradio UI
 - Make sure the GGUF model is compatible with `llama-cpp-python`.
 
 ## Contributing
